@@ -58,6 +58,8 @@
     <Content Include="packages.config" />
     <Content Include="sample.xml" />
     <Compile Include="MsWordXml.fs" />
+    <Compile Include="Model.fs" />
+    <Compile Include="ParatextSfm.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <ItemGroup>
