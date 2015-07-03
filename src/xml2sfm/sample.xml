@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?mso-application  progid="Word.Document"?>
+<pkg:package xmlns:pkg="http://schemas.microsoft.com/office/2006/xmlPackage" xmlns="http://www.w3.org/1999/XSL/Format" xmlns:v="urn:schemas-microsoft-com:vml">
+  <pkg:part pkg:name="foo" pkg:contentType="foo" pkg:padding="foo">
+    <pkg:xmlData>
+      <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+        <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml" />
+      </Relationships>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/document.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml">
+    <pkg:xmlData>
+      <w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:ve="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml">
+        <w:body>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="foo" />
+            </w:pPr>
+            <w:r>
+              <w:t>bar</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="foo" />
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rStyle w:val="foo" />
+              </w:rPr>
+              <w:t>1</w:t>
+            </w:r>
+            <w:r>
+              <w:t xml:space="preserve"> </w:t>
+            </w:r>
+            <m:oMath>
+              <m:m>
+                <m:mPr>
+                  <m:baseJc m:val="foo" />
+                  <m:rSpRule m:val="foo" />
+                  <m:rSp m:val="foo" />
+                  <m:mcs>
+                    <m:mc>
+                      <m:mcPr>
+                        <m:count m:val="foo" />
+                        <m:mcJc m:val="foo" />
+                      </m:mcPr>
+                    </m:mc>
+                  </m:mcs>
+                </m:mPr>
+                <m:mr>
+                  <m:e>
+                    <m:r>
+                      <m:rPr>
+                        <m:nor />
+                      </m:rPr>
+                      <w:rPr>
+                        <w:rStyle w:val="foo" />
+                      </w:rPr>
+                      <m:t>bar</m:t>
+                    </m:r>
+                  </m:e>
+                </m:mr>
+              </m:m>
+            </m:oMath>
+            <w:r>
+              <w:t xml:space="preserve"> </w:t>
+            </w:r>
+            <m:oMath>
+              <m:m>
+                <m:mPr>
+                  <m:baseJc m:val="foo" />
+                  <m:rSpRule m:val="foo" />
+                  <m:rSp m:val="foo" />
+                  <m:mcs>
+                    <m:mc>
+                      <m:mcPr>
+                        <m:count m:val="foo" />
+                        <m:mcJc m:val="foo" />
+                      </m:mcPr>
+                    </m:mc>
+                  </m:mcs>
+                </m:mPr>
+                <m:mr>
+                  <m:e>
+                    <m:r>
+                      <m:rPr>
+                        <m:nor />
+                      </m:rPr>
+                      <w:rPr>
+                        <w:rStyle w:val="foo" />
+                      </w:rPr>
+                      <m:t>bar</m:t>
+                    </m:r>
+                  </m:e>
+                </m:mr>
+              </m:m>
+            </m:oMath>
+            <w:r>
+              <w:t xml:space="preserve"> </w:t>
+            </w:r>
+          </w:p>
+        </w:body>
+      </w:document>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/styles.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml">
+    <pkg:xmlData>
+      <w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+        <w:style w:type="foo" w:styleId="foo" />
+        <w:style w:type="foo" w:styleId="foo">
+          <w:basedOn w:val="foo" />
+          <w:name w:val="foo" />
+          <w:pPr>
+            <w:spacing w:before="foo" w:after="foo" />
+            <w:keepNext w:val="foo" />
+          </w:pPr>
+          <w:rPr>
+            <w:b w:val="foo" />
+            <w:sz w:val="foo" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="foo" w:styleId="foo">
+          <w:name w:val="foo" />
+          <w:rPr>
+            <w:noProof w:val="foo" />
+            <w:rFonts w:ascii="foo" w:h-ansi="foo" w:cs="foo" w:fareast="foo" />
+          </w:rPr>
+        </w:style>
+      </w:styles>
+    </pkg:xmlData>
+  </pkg:part>
+</pkg:package>
