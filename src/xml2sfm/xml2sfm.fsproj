@@ -56,8 +56,8 @@
   <ItemGroup>
     <None Include="App.config" />
     <Content Include="packages.config" />
-    <Content Include="sample.xml" />
-    <Compile Include="MsWordXml.fs" />
+    <None Include="sample.flextext" />
+    <Compile Include="Flextext.fs" />
     <Compile Include="Model.fs" />
     <Compile Include="ParatextSfm.fs" />
     <Compile Include="Program.fs" />

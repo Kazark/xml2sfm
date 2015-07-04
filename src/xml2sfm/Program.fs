@@ -6,10 +6,10 @@ module EntryPoint =
 
     let transform (inputPath : string) outputPath =
         let xml = File.ReadAllText(inputPath, Encoding.UTF8)
-        match MsWordXml.parse xml with
-        | MsWordXml.Parse.Succeeded text ->
+        match Flextext.parse xml with
+        | Flextext.Parse.Succeeded text ->
             printfn "Experiment: %s" text
-        | MsWordXml.Parse.Failed ->
+        | Flextext.Parse.Failed ->
             printfn "Parse failed!"
 
     let usage() =

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<document version="2">
+  <interlinear-text guid="00000000-0000-0000-0000-000000000000">
+    <item type="title" lang="en">foo</item>
+    <item type="title" lang="el">foo</item>
+    <item type="title" lang="iv">foo</item>
+    <item type="source" lang="en">foo</item>
+    <item type="comment" lang="en">foo</item>
+    <item type="comment" lang="iv"></item>
+    <paragraphs>
+      <paragraph guid="00000000-0000-0000-0000-000000000000">
+        <phrases>
+          <phrase guid="00000000-0000-0000-0000-000000000000">
+            <item type="segnum" lang="en">foo</item>
+            <words>
+              <word guid="00000000-0000-0000-0000-000000000000">
+                <item type="txt" lang="el">foo</item>
+                <item type="gls" lang="iv">foo</item>
+                <item type="gls" lang="en">foo</item>
+              </word>
+              <word guid="00000000-0000-0000-0000-000000000000">
+                <item type="txt" lang="el">foo</item>
+                <item type="gls" lang="iv">foo</item>
+                <item type="gls" lang="en">foo</item>
+              </word>
+              <word guid="00000000-0000-0000-0000-000000000000">
+                <item type="txt" lang="el">foo</item>
+                <item type="gls" lang="iv">foo</item>
+                <item type="gls" lang="en">foo</item>
+              </word>
+            </words>
+            <item type="gls" lang="iv">foo</item>
+            <item type="gls" lang="en">foo</item>
+            <item type="lit" lang="iv">foo</item>
+            <item type="note" lang="iv"></item>
+            <item type="note" lang="en">foo</item>
+          </phrase>
+        </phrases>
+      </paragraph>
+      <paragraph guid="00000000-0000-0000-0000-000000000000">
+        <phrases>
+          <phrase guid="00000000-0000-0000-0000-000000000000">
+            <item type="segnum" lang="en">foo</item>
+            <words>
+              <word guid="00000000-0000-0000-0000-000000000000">
+                <item type="txt" lang="el">foo</item>
+                <item type="gls" lang="iv">foo</item>
+                <item type="gls" lang="en">foo</item>
+              </word>
+              <word>
+                <item type="punct" lang="el">foo</item>
+              </word>
+            </words>
+            <item type="gls" lang="iv">foo</item>
+            <item type="gls" lang="en">foo</item>
+            <item type="lit" lang="iv">foo</item>
+          </phrase>
+          <phrase guid="00000000-0000-0000-0000-000000000000">
+            <item type="segnum" lang="en">foo</item>
+            <words>
+              <word guid="00000000-0000-0000-0000-000000000000">
+                <item type="txt" lang="el">foo</item>
+                <item type="gls" lang="iv">foo</item>
+                <item type="gls" lang="en">foo</item>
+              </word>
+              <word>
+                <item type="punct" lang="el">foo</item>
+              </word>
+            </words>
+            <item type="gls" lang="iv">foo</item>
+            <item type="gls" lang="en">foo</item>
+            <item type="lit" lang="iv">foo</item>
+          </phrase>
+        </phrases>
+      </paragraph>
+      <paragraph guid="00000000-0000-0000-0000-000000000000" />
+    </paragraphs>
+    <languages>
+      <language lang="en" font="Times New Roman" />
+      <language lang="el" font="Arial" vernacular="true" />
+      <language lang="iv" font="SimSun" />
+    </languages>
+  </interlinear-text>
+  <interlinear-text guid="00000000-0000-0000-0000-000000000000">
+    <item type="title" lang="en">foo</item>
+    <item type="title" lang="el">foo</item>
+    <item type="title" lang="iv">foo</item>
+    <item type="source" lang="en">foo</item>
+    <item type="comment" lang="en">foo</item>
+    <item type="comment" lang="iv"></item>
+    <paragraphs>
+      <paragraph guid="00000000-0000-0000-0000-000000000000">
+        <phrases>
+          <phrase guid="00000000-0000-0000-0000-000000000000">
+            <item type="segnum" lang="en">foo</item>
+            <words>
+              <word guid="00000000-0000-0000-0000-000000000000">
+                <item type="txt" lang="el">foo</item>
+                <item type="gls" lang="iv">foo</item>
+                <item type="gls" lang="en">foo</item>
+              </word>
+              <word guid="00000000-0000-0000-0000-000000000000">
+                <item type="txt" lang="el">foo</item>
+                <item type="gls" lang="iv">foo</item>
+                <item type="gls" lang="en">foo</item>
+              </word>
+            </words>
+            <item type="gls" lang="iv">foo</item>
+            <item type="gls" lang="en">foo</item>
+            <item type="lit" lang="iv">foo</item>
+          </phrase>
+        </phrases>
+      </paragraph>
+    </paragraphs>
+    <languages>
+      <language lang="en" font="Times New Roman" />
+      <language lang="el" font="Arial" vernacular="true" />
+      <language lang="iv" font="SimSun" />
+    </languages>
+  </interlinear-text>
+</document>

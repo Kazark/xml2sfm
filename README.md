@@ -1,6 +1,9 @@
 # XML to SFM
 
-Convert MS Word XML files exported from Flex into Paratext USFM.
+Convert FLEx XML files (`.flextext`) into Paratext USFM files. Given that the
+semantics for the source files are built on interlinear rather than a structure
+of Biblical text that is conducive to publishing, there is some waving of hands
+involved in this process.
 
 Usage:
 
