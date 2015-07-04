@@ -7,4 +7,4 @@ involved in this process.
 
 Usage:
 
-    xml2sfm /path/to/input/file.xml [/path/to/output/file.sfm]
+    xml2sfm /path/to/input/file.flextext [/path/to/output/file.sfm]
