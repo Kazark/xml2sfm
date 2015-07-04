@@ -57,8 +57,9 @@
     <None Include="App.config" />
     <Content Include="packages.config" />
     <None Include="sample.flextext" />
-    <Compile Include="Flextext.fs" />
+    <Compile Include="Sequence.fs" />
     <Compile Include="Model.fs" />
+    <Compile Include="Flextext.fs" />
     <Compile Include="ParatextSfm.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>

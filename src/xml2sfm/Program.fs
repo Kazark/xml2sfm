@@ -4,13 +4,11 @@ module EntryPoint =
     open System.IO
     open System.Text
 
-    let transform (inputPath : string) outputPath =
+    let transform inputPath outputPath =
         let xml = File.ReadAllText(inputPath, Encoding.UTF8)
-        match Flextext.parse xml with
-        | Flextext.Parse.Succeeded text ->
-            printfn "Experiment: %s" text
-        | Flextext.Parse.Failed ->
-            printfn "Parse failed!"
+        let model = Flextext.parseXml xml (Path.GetFileNameWithoutExtension inputPath)
+        let sfmLines = ParatextSfm.stringifyBook model
+        File.WriteAllText(outputPath, sfmLines, Encoding.UTF8)
 
     let usage() =
         printfn "Usage: xml2sfm inputPath [outputPath]"
@@ -23,7 +21,9 @@ module EntryPoint =
             usage()
             1
         | [|inputPath|] ->
-            transform inputPath "output.sfm"
+            let outputFile = sprintf "%s.sfm" <| Path.GetFileNameWithoutExtension inputPath
+            let outputPath = Path.Combine(Path.GetDirectoryName inputPath, outputFile)
+            transform inputPath outputPath
             0
         | [|inputPath; outputPath|] ->
             transform inputPath outputPath
