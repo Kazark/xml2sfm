@@ -105,14 +105,17 @@ module Flextext =
             match currentToken with
             | Token.Text _ ->
                 secondPassTokens, currentToken :: tokenBuffer
+            | Token.Punctuation _ ->
+                secondPassTokens, currentToken :: tokenBuffer
             | _ ->
                 let footnoteText =
                     footnoteTextTokens
                     |> List.map (fun token -> match token with
-                                              | Token.Text text -> text
+                                              | Token.Text text -> sprintf " %s" text
+                                              | Token.Punctuation punctuation -> punctuation
                                               | _ -> "")
-                    |> String.concat " "
-                    |> SecondPassToken.Text
+                    |> String.concat ""
+                    |> SecondPassToken.FootnoteText
                 in Sequence.append footnoteText secondPassTokens, [currentToken]
         | [previousToken; _] ->
             structurePoorlyStructuredData (structurePoorlyStructuredData (secondPassTokens, []) previousToken) currentToken
@@ -163,8 +166,9 @@ module Flextext =
         | SecondPassToken.FootnotePositionMarker ->
             addToVerse (VerseElement.Footnote "TODO cannot correlate with footnote text!!")
         | SecondPassToken.FootnoteText text ->
-            printfn "ERROR! Footnote text; don't know who to correlate it: %s" text
-            preChapterElements, chapters
+            sprintf "TODO don't know what footnote this text belongs in: '%s'" text
+            |> VerseElement.Text
+            |> addToVerse
         | SecondPassToken.ParagraphBreak ->
             if chapters = []
             then addToChapter ChapterElement.ParagraphBreak
