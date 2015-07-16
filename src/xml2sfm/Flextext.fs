@@ -86,23 +86,23 @@ module Flextext =
         | [Token.ProbableVerseNumber _] ->
             secondPassTokens, [currentToken]
         | [Token.FootnoteMarker] ->
-            Sequence.append SecondPassToken.FootnotePositionMarker secondPassTokens, []
+            SecondPassToken.FootnotePositionMarker :: secondPassTokens, []
         | [Token.Punctuation punct] ->
-            Sequence.append (SecondPassToken.Punctuation punct) secondPassTokens, []
+            (SecondPassToken.Punctuation punct) :: secondPassTokens, []
         | [Token.SectionTitle title] ->
-            Sequence.append (SecondPassToken.SectionTitle title) secondPassTokens, []
+            (SecondPassToken.SectionTitle title) :: secondPassTokens, []
         | [Token.Text text] ->
-            Sequence.append (SecondPassToken.Text text) secondPassTokens, []
+            (SecondPassToken.Text text) :: secondPassTokens, []
         | [Token.VerseMarker] ->
-            Sequence.append (SecondPassToken.Punctuation ")") secondPassTokens, []
+            (SecondPassToken.Punctuation ")") :: secondPassTokens, []
         | [Token.ParagraphBreak; Token.FootnoteMarker] ->
-            Sequence.append SecondPassToken.ParagraphBreak secondPassTokens, [currentToken]
+            SecondPassToken.ParagraphBreak :: secondPassTokens, [currentToken]
         | [Token.ParagraphBreak; _] ->
-            structurePoorlyStructuredData (Sequence.append SecondPassToken.ParagraphBreak secondPassTokens, []) currentToken
+            structurePoorlyStructuredData (SecondPassToken.ParagraphBreak :: secondPassTokens, []) currentToken
         | [Token.ProbableVerseNumber number; Token.VerseMarker] ->
-            Sequence.append (SecondPassToken.VerseNumber number) secondPassTokens, []
+            (SecondPassToken.VerseNumber number) :: secondPassTokens, []
         | [Token.ProbableVerseNumber number; Token.Punctuation ")\"" ] ->
-            Seq.append [SecondPassToken.VerseNumber number; SecondPassToken.Text "\""] secondPassTokens, []
+            SecondPassToken.Text "\"" :: (SecondPassToken.VerseNumber number :: secondPassTokens), []
         | Token.FootnoteMarker :: footnoteTextTokens ->
             match currentToken with
             | Token.Text _ ->
@@ -118,7 +118,7 @@ module Flextext =
                                               | _ -> "")
                     |> String.concat ""
                     |> SecondPassToken.FootnoteText
-                in Sequence.append footnoteText secondPassTokens, [currentToken]
+                in footnoteText :: secondPassTokens, [currentToken]
         | [previousToken; _] ->
             structurePoorlyStructuredData (structurePoorlyStructuredData (secondPassTokens, []) previousToken) currentToken
         | tokens ->
@@ -133,11 +133,11 @@ module Flextext =
                                          | None -> number
             if System.UInt32.Parse(pureNumericVerseNumber) = 1u
             then
-                Seq.append tokens [SecondPassToken.ChapterNumber chapterNumber; token], chapterNumber + 1u
+                token :: (SecondPassToken.ChapterNumber chapterNumber :: tokens), chapterNumber + 1u
             else
-                Sequence.append token tokens, chapterNumber
+                token :: tokens, chapterNumber
         | _ ->
-            Sequence.append token tokens, chapterNumber
+             token :: tokens, chapterNumber
 
     let private divideIntoChapters (preChapterElements, chapters : (uint32 * ChapterElement list) list) token =
         let addToChapter element =
@@ -185,12 +185,16 @@ module Flextext =
             addToChapter (ChapterElement.SectionTitle title)
 
     let private bookFromTokens tokens =
-        tokens
-        |> Seq.fold structurePoorlyStructuredData (Seq.empty, [])
-        |> fst
-        |> Seq.fold insertChapterNumbers (Seq.empty, 1u)
-        |> fst
-        |> Seq.fold divideIntoChapters ([], [])
+        let step1 = tokens
+                    |> Seq.toList
+                    |> Seq.fold structurePoorlyStructuredData ([], [])
+                    |> fst
+                    |> List.rev
+        let step2 = step1
+                    |> List.fold insertChapterNumbers ([], 1u)
+                    |> fst
+                    |> List.rev
+        step2 |> Seq.fold divideIntoChapters ([], [])
 
     let structureChapters (chapters : (uint32 * ChapterElement list) list) =
         chapters
