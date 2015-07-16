@@ -101,6 +101,8 @@ module Flextext =
             structurePoorlyStructuredData (Sequence.append SecondPassToken.ParagraphBreak secondPassTokens, []) currentToken
         | [Token.ProbableVerseNumber number; Token.VerseMarker] ->
             Sequence.append (SecondPassToken.VerseNumber number) secondPassTokens, []
+        | [Token.ProbableVerseNumber number; Token.Punctuation ")\"" ] ->
+            Seq.append [SecondPassToken.VerseNumber number; SecondPassToken.Text "\""] secondPassTokens, []
         | Token.FootnoteMarker :: footnoteTextTokens ->
             match currentToken with
             | Token.Text _ ->
